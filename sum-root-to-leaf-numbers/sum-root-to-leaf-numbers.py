@@ -1,5 +1,5 @@
 // LeetCode Solution: Sum Root To Leaf Numbers
-// Submitted: 2026-07-19T07:55:47.730Z
+// Submitted: 2026-07-19T07:57:38.554Z
 // Language: Python3
 
 # Definition for a binary tree node.
@@ -11,12 +11,12 @@
 class Solution:
     def sumNumbers(self, root: Optional[TreeNode]) -> int:
         def dfs(node, num):
-            if node == None:
+            if not node:
                 return None
             
             num = num * 10 + node.val
 
-            if node.left == None and node.right == None:
+            if not node.left and not node.right:
                 return num
             
             return dfs(node.left, num) + dfs(node.right, num)
