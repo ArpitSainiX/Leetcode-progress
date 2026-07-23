@@ -1,5 +1,5 @@
 // LeetCode Solution: Top K Frequent Elements
-// Submitted: 2026-07-23T07:16:36.169Z
+// Submitted: 2026-07-23T07:18:16.967Z
 // Language: Python3
 
 class Solution:
@@ -17,7 +17,7 @@ class Solution:
             freq[v].append(num)
         
         res = []
-        for i in range(len(nums)-1, 0, -1):
+        for i in range(len(nums), 0, -1):
             for n in freq[i]:
                 res.append(n)
                 if len(res) == k:
