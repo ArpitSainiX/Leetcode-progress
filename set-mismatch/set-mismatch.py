@@ -1,9 +1,10 @@
 // LeetCode Solution: Set Mismatch
-// Submitted: 2026-08-02T06:18:31.881Z
+// Submitted: 2026-08-02T06:19:20.156Z
 // Language: Python3
 
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
+        nums.sort()
         res = []
         all_nums = [i for i in range(1,len(nums)+1)] #all_nums = [1,2,3,4]
 
@@ -16,7 +17,7 @@ class Solution:
                 l += 1
                 r += 1
         # return res
-        
+
         for el in all_nums:
             if el not in nums:
                 res.append(el)
