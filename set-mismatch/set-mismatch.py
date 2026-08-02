@@ -1,5 +1,5 @@
 // LeetCode Solution: Set Mismatch
-// Submitted: 2026-08-02T06:17:30.443Z
+// Submitted: 2026-08-02T06:18:31.881Z
 // Language: Python3
 
 class Solution:
@@ -7,10 +7,6 @@ class Solution:
         res = []
         all_nums = [i for i in range(1,len(nums)+1)] #all_nums = [1,2,3,4]
 
-        for el in all_nums:
-            if el not in nums:
-                res.append(el)
-                break
         l,r = 0,1
         while l < r and r < len(nums):
             if nums[l] == nums[r]:
@@ -19,5 +15,11 @@ class Solution:
             else:
                 l += 1
                 r += 1
+        # return res
+        
+        for el in all_nums:
+            if el not in nums:
+                res.append(el)
+                break
         return res
 
