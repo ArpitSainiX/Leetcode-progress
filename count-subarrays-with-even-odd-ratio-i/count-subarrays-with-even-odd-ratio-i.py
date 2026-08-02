@@ -1,5 +1,5 @@
 // LeetCode Solution: Count Subarrays With Even Odd Ratio I
-// Submitted: 2026-08-02T08:12:35.639Z
+// Submitted: 2026-08-02T08:15:46.391Z
 // Language: Python3
 
 class Solution:
@@ -7,14 +7,12 @@ class Solution:
         count = 0
 
         for i in range(len(nums)):
+            x,y = 0,0
             for j in range(i, len(nums)):
-                x,y = 0,0
-                subarr = nums[i:j+1]  #generated subarray
-                for k in range(len(subarr)):
-                    if subarr[k] % 2 == 0:
-                        x += 1
-                    else: 
-                        y += 1
+                if nums[j] % 2 == 0:
+                    x += 1
+                else:
+                    y += 1
                 if y > 0 and x*b <= y *a:
                     count += 1
         return count
