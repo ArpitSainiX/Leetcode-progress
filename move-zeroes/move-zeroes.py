@@ -1,5 +1,5 @@
 // LeetCode Solution: Move Zeroes
-// Submitted: 2026-08-08T10:49:49.112Z
+// Submitted: 2026-08-08T10:57:06.893Z
 // Language: Python3
 
 class Solution:
@@ -7,13 +7,9 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        l,r  = 0,1
-        while l < r and r < len(nums):
-            if nums[l] == 0 and nums[r] == 0:
-                r += 1
-            elif nums[l] == 0:
-                nums[l], nums[r] = nums[r], nums[l]
-                l += 1
-                r += 1
-            elif nums[r] == 0:
-                r += 1
+        lnz = 0
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[lnz], nums[i] = nums[i], nums[lnz]
+                lnz += 1
+            
