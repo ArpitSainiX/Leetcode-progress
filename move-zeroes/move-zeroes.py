@@ -1,5 +1,5 @@
 // LeetCode Solution: Move Zeroes
-// Submitted: 2026-08-08T10:42:50.456Z
+// Submitted: 2026-08-08T10:49:49.112Z
 // Language: Python3
 
 class Solution:
@@ -16,4 +16,4 @@ class Solution:
                 l += 1
                 r += 1
             elif nums[r] == 0:
-                continue
+                r += 1
