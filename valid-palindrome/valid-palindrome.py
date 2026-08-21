@@ -1,12 +1,12 @@
 // LeetCode Solution: Valid Palindrome
-// Submitted: 2026-08-21T08:30:21.526Z
+// Submitted: 2026-08-21T08:34:15.918Z
 // Language: Python3
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
         new_str = ""
         for i in range(len(s)):
-            if s[i].isalpha():
+            if s[i].isalnum():
                 new_str += s[i]
         lower = new_str.lower()
 
