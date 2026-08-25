@@ -1,14 +1,14 @@
 // LeetCode Solution: Smallest Missing Multiple Of K
-// Submitted: 2026-08-25T04:51:38.599Z
+// Submitted: 2026-08-25T04:52:30.543Z
 // Language: Python3
 
 class Solution:
     def missingMultiple(self, nums: List[int], k: int) -> int:
         nums.sort()
 
-        multiples = []*(len(nums)+1)
+        multiples = []*len(nums)
 
-        for i in range(1, len(nums)+1):
+        for i in range(1, len(nums)+2):
             multi = k*i
             multiples.append(multi)
         
