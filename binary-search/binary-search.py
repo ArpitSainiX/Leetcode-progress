@@ -1,10 +1,10 @@
 // LeetCode Solution: Binary Search
-// Submitted: 2026-08-29T13:46:02.404Z
+// Submitted: 2026-08-29T13:46:49.727Z
 // Language: Python3
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        l,r = 0,len(nums)
+        l,r = 0,len(nums)-1
 
         while l <= r:
             mid = (l+r)//2
