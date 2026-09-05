@@ -1,5 +1,5 @@
 // LeetCode Solution: Smallest Stable Index Ii
-// Submitted: 2026-09-05T08:46:36.778Z
+// Submitted: 2026-09-05T08:49:37.053Z
 // Language: Python3
 
 class Solution:
@@ -17,9 +17,9 @@ class Solution:
 
         res = []
         for j in range(n):
-            subtract = prefMax[i] - suffMin[i]
+            subtract = prefMax[j] - suffMin[j]
             if subtract <= k:
-                res.append(i) 
+                res.append(j) 
         
         if len(res) != 0:
             return min(res)
