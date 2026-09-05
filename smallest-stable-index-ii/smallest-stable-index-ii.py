@@ -1,26 +1,20 @@
 // LeetCode Solution: Smallest Stable Index Ii
-// Submitted: 2026-09-05T08:49:37.053Z
+// Submitted: 2026-09-05T08:59:06.982Z
 // Language: Python3
 
 class Solution:
     def firstStableIndex(self, nums: list[int], k: int) -> int:
         n = len(nums)
-        suffMin = []*n 
-        prefMax = []*n
+        suff = [0]*n 
+        suff[-1] = nums[-1]
 
+        for i in range(n-2, -1, -1):
+            suff[i] = min(nums[i], suff[i+1])
 
-        for i in range(n):
-            min_val = min(nums[i:n])
-            max_val = max(nums[:i+1])
-            suffMin.append(min_val)
-            prefMax.append(max_val)
-
-        res = []
+        pre = float('-inf')
         for j in range(n):
-            subtract = prefMax[j] - suffMin[j]
-            if subtract <= k:
-                res.append(j) 
-        
-        if len(res) != 0:
-            return min(res)
+            pre = max(pre, nums[j])
+
+            if pre - suff[j] <= k:
+                return j
         return -1
