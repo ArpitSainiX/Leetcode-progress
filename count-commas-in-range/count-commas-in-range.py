@@ -1,5 +1,5 @@
 // LeetCode Solution: Count Commas In Range
-// Submitted: 2026-09-08T06:19:27.096Z
+// Submitted: 2026-09-08T06:21:00.721Z
 // Language: Python3
 
 class Solution:
@@ -11,5 +11,5 @@ class Solution:
         if n >= 1000 and n < 100000:
             commas = (n - 1000) + 1
         elif n >= 100000:
-            commas += 2*(n-1000)+1
+            commas += 2*(1000000-100000)+1
         return commas
