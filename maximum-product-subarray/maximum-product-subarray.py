@@ -1,5 +1,5 @@
 // LeetCode Solution: Maximum Product Subarray
-// Submitted: 2026-09-10T07:09:01.067Z
+// Submitted: 2026-09-10T07:09:52.269Z
 // Language: Python3
 
 class Solution:
@@ -8,8 +8,9 @@ class Solution:
             return nums[0]
         #if the elements are more than 1.
         '''
-            if elements multiplication is less than 0 then we need to remove element from the left side.
+            first optimal approach.
         '''
+
         # n = len(nums)
         # pre = suff = 1
         # ans = float('-inf')
@@ -38,5 +39,5 @@ class Solution:
             maxProd = max(curr, maxProd * curr)
             minProd = max(curr, minProd * curr)
 
-            ans = max(ans, maxProd, minProd)
+            ans = max(ans, maxProd)
         return ans
