@@ -1,5 +1,5 @@
 // LeetCode Solution: Maximum Product Subarray
-// Submitted: 2026-09-10T07:09:52.269Z
+// Submitted: 2026-09-10T07:10:12.432Z
 // Language: Python3
 
 class Solution:
@@ -37,7 +37,7 @@ class Solution:
                 maxProd, minProd = minProd, maxProd
             
             maxProd = max(curr, maxProd * curr)
-            minProd = max(curr, minProd * curr)
+            minProd = min(curr, minProd * curr)
 
             ans = max(ans, maxProd)
         return ans
