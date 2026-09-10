@@ -1,5 +1,5 @@
 // LeetCode Solution: Maximum Product Subarray
-// Submitted: 2026-09-10T06:46:04.319Z
+// Submitted: 2026-09-10T07:00:00.400Z
 // Language: Python3
 
 class Solution:
@@ -10,14 +10,18 @@ class Solution:
         '''
             if elements multiplication is less than 0 then we need to remove element from the left side.
         '''
-        multi = nums[0]
-        curr_multi = 1
+        n = len(nums)
+        pre = suff = 1
+        ans = float('-inf')
 
         for i in range(len(nums)):
-            curr_multi *= nums[i]
-            if curr_multi < 0:
-                curr_multi //= multi
-            elif curr_multi >= 0:
-                multi = curr_multi
-        
-        return multi
+            if pre == 0:
+                pre = 1
+            if suff == 0:
+                suff = 1 
+            
+            pre *= nums[i]
+            suff *= nums[n-i-1]
+
+            ans = max(ans, pre, suff)
+        return ans
