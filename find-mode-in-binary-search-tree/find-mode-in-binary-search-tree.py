@@ -1,5 +1,5 @@
 // LeetCode Solution: Find Mode In Binary Search Tree
-// Submitted: 2026-09-12T05:48:12.784Z
+// Submitted: 2026-09-12T11:37:09.734Z
 // Language: Python3
 
 # Definition for a binary tree node.
@@ -21,24 +21,16 @@ class Solution:
             dfs(node.right)
         dfs(root)
 
-        if len(lst) == 1:
-            return lst
-        #if length is greater than 1
+        #now the lst is -> [1,2,2]
+        fq = {}
 
-        freq = {}
         for el in lst:
-            if el in freq:
-                freq[el] += 1
+            if el in fq:
+                fq[el] += 1
             else:
-                freq[el] = 1
+                fq[el] = 1
+
+        max_freq = max(fq.values())
+
+        return [val for val, count in fq.items() if count == max_freq]
         
-        keys, value = [], []
-
-        for k, v in freq.items():
-            keys.append(k)
-            value.append(v)
-
-        max_elem_val = max(value)
-        max_elem_index = value.index(max_elem_val)
-
-        return [keys[max_elem_index]]
