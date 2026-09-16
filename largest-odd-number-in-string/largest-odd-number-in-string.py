@@ -1,5 +1,5 @@
 // LeetCode Solution: Largest Odd Number In String
-// Submitted: 2026-09-16T15:30:09.268Z
+// Submitted: 2026-09-16T15:32:55.409Z
 // Language: Python3
 
 class Solution:
@@ -22,6 +22,6 @@ class Solution:
 
 
 def checkOdd(string):
-    num = int(string)
+    num = int(string[-1])
     if num % 2 != 0:
         return True
