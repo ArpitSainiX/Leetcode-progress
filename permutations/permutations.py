@@ -1,28 +1,53 @@
 // LeetCode Solution: Permutations
-// Submitted: 2026-08-21T15:19:14.268Z
+// Submitted: 2026-09-22T05:19:34.831Z
 // Language: Python3
 
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        res = [] # it will store all the permutations.
-        path = []
-        used = [False]*len(nums)
+        ans = []
+        n = len(nums)
 
-        def backtrack():
-            if len(path) == len(nums):
-                res.append(path[:])
+        def solve(vis, curr):
+            if len(curr) == len(nums):
+                ans.append(curr[:])
                 return
             
             for i in range(len(nums)):
-                if used[i]:
-                    continue
-                
-                path.append(nums[i])
-                used[i] = True
-                
-                backtrack()
+                if vis[i] == False:
+                    curr.append(nums[i])
+                    vis[i] = True
+                    solve(vis, curr)
+                    curr.pop()
+                    vis[i] = False
+        vis = [False]*n
+        solve(vis, [])
+        return ans
 
-                path.pop()
-                used[i] = False
-        backtrack()
-        return res
+
+
+
+
+
+
+        # res = [] # it will store all the permutations.
+        # path = []
+        # used = [False]*len(nums)
+
+        # def backtrack():
+        #     if len(path) == len(nums):
+        #         res.append(path[:])
+        #         return
+            
+        #     for i in range(len(nums)):
+        #         if used[i]:
+        #             continue
+                
+        #         path.append(nums[i])
+        #         used[i] = True
+                
+        #         backtrack()
+
+        #         path.pop()
+        #         used[i] = False
+        # backtrack()
+        # return res
