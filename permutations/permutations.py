@@ -1,23 +1,45 @@
 // LeetCode Solution: Permutations
-// Submitted: 2026-09-22T05:22:04.975Z
+// Submitted: 2026-09-22T05:44:06.708Z
 // Language: Python3
 
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
+        n = len(nums)
         ans = []
 
-        def backtracking(curr):
-            if len(curr) == len(nums):
-                ans.append(curr.copy())
-                return
+        def backtrack(idx):
+            if idx == n:
+                ans.append(nums.copy())
             
-            for num in nums:
-                if num not in curr:
-                    curr.append(num)
-                    backtracking(curr)
-                    curr.pop()
-        backtracking([])
+            for i in range(idx, n):
+                nums[i], nums[idx] = nums[idx], nums[i]
+                backtrack(idx+1)
+                nums[i], nums[idx] = nums[idx], nums[i]
+        backtrack(0)
         return ans
+
+
+
+
+
+
+
+
+
+        # ans = []
+
+        # def backtracking(curr):
+        #     if len(curr) == len(nums):
+        #         ans.append(curr.copy())
+        #         return
+            
+        #     for num in nums:
+        #         if num not in curr:
+        #             curr.append(num)
+        #             backtracking(curr)
+        #             curr.pop()
+        # backtracking([])
+        # return ans
 
 
 
