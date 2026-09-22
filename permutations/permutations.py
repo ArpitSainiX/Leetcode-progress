@@ -1,27 +1,44 @@
 // LeetCode Solution: Permutations
-// Submitted: 2026-09-22T05:19:34.831Z
+// Submitted: 2026-09-22T05:22:04.975Z
 // Language: Python3
 
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         ans = []
-        n = len(nums)
 
-        def solve(vis, curr):
+        def backtracking(curr):
             if len(curr) == len(nums):
-                ans.append(curr[:])
+                ans.append(curr.copy())
                 return
             
-            for i in range(len(nums)):
-                if vis[i] == False:
-                    curr.append(nums[i])
-                    vis[i] = True
-                    solve(vis, curr)
+            for num in nums:
+                if num not in curr:
+                    curr.append(num)
+                    backtracking(curr)
                     curr.pop()
-                    vis[i] = False
-        vis = [False]*n
-        solve(vis, [])
+        backtracking([])
         return ans
+
+
+
+        # ans = []
+        # n = len(nums)
+
+        # def solve(vis, curr):
+        #     if len(curr) == len(nums):
+        #         ans.append(curr[:])
+        #         return
+            
+        #     for i in range(len(nums)):
+        #         if vis[i] == False:
+        #             curr.append(nums[i])
+        #             vis[i] = True
+        #             solve(vis, curr)
+        #             curr.pop()
+        #             vis[i] = False
+        # vis = [False]*n
+        # solve(vis, [])
+        # return ans
 
 
 
