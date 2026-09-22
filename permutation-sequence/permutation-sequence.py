@@ -1,5 +1,5 @@
 // LeetCode Solution: Permutation Sequence
-// Submitted: 2026-09-22T05:58:02.994Z
+// Submitted: 2026-09-22T06:10:33.138Z
 // Language: Python3
 
 class Solution:
@@ -7,18 +7,17 @@ class Solution:
         strs = []
         for i in range(1, n+1):
             strs += str(i)
-
         
         ans = []
-        def backtrack(idx):
-            if idx == n:
-                ans.append(strs.copy())
+        def backtracking(curr):
+            if len(curr) == len(strs):
+                ans.append(curr.copy())
                 return
             
-            for i in range(idx, n):
-                strs[i], strs[idx] = strs[idx], strs[i]
-                backtrack(idx+1)
-                strs[i], strs[idx] = strs[idx], strs[i]
-        backtrack(0)
-
+            for num in strs:
+                if num not in curr:
+                    curr.append(num)
+                    backtracking(curr)
+                    curr.pop()
+        backtracking([])
         return "".join(ans[k-1])
