@@ -1,5 +1,5 @@
 // LeetCode Solution: Lucky Numbers In A Matrix
-// Submitted: 2026-09-23T08:17:35.383Z
+// Submitted: 2026-09-23T08:18:40.113Z
 // Language: Python3
 
 class Solution:
@@ -14,6 +14,10 @@ class Solution:
             max_num = max(matrix[row][col] for row in range(len(matrix)))
             max_arr.append(max_num)
 
+        ans = []
         for el in min_arr:
             if el in max_arr:
-                return [el]
+                ans.append(el)
+        if len(ans) == 0:
+            return []
+        return ans
