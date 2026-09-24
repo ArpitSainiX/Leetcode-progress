@@ -1,10 +1,10 @@
 // LeetCode Solution: Smallest Index With Digit Sum Equal To Index
-// Submitted: 2026-09-24T03:37:54.632Z
+// Submitted: 2026-09-24T03:38:59.100Z
 // Language: Python3
 
 class Solution:
     def smallestIndex(self, nums: List[int]) -> int:
-        indices = []
+        # indices = []
 
         for i in range(len(nums)):
             string = str(nums[i])
@@ -13,9 +13,10 @@ class Solution:
                 summ += int(string[j])
             
             if summ == i:
-                indices.append(i)
+                return i
+        return -1
         
-        if len(indices) == 0:
-            return -1
-        return min(indices)
+        # if len(indices) == 0:
+        #     return -1
+        # return min(indices)
 
