@@ -1,5 +1,5 @@
 // LeetCode Solution: Validate Binary Search Tree
-// Submitted: 2026-10-04T15:27:48.512Z
+// Submitted: 2026-10-04T15:29:22.333Z
 // Language: Python3
 
 # Definition for a binary tree node.
@@ -20,10 +20,9 @@ class Solution:
             ans.append(node.val)
             dfs(node.right)
         dfs(root)
-        arr = sorted(ans)
-        # return ans == arr
 
-        for i in range(len(ans)):
+        arr = sorted(ans)
+        for i in range(1,len(ans)):
             if ans[i] == ans[i-1]:
                 return False
         if ans != arr:
