@@ -1,5 +1,5 @@
 // LeetCode Solution: Validate Binary Search Tree
-// Submitted: 2026-10-04T15:27:40.686Z
+// Submitted: 2026-10-04T15:27:48.512Z
 // Language: Python3
 
 # Definition for a binary tree node.
