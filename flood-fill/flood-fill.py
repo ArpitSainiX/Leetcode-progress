@@ -1,5 +1,5 @@
 // LeetCode Solution: Flood Fill
-// Submitted: 2026-10-05T08:35:05.484Z
+// Submitted: 2026-10-05T08:37:36.686Z
 // Language: Python3
 
 class Solution:
@@ -16,14 +16,24 @@ class Solution:
             if row < 0 or col < 0 or row >= m or col >= n:
                 return 
             
+            #for the visited row and col preventing.
             if image[row][col] != original:
                 return 
 
+            #coloring
             image[row][col] = color
 
+            #going right
             f(row, col + 1)
+
+            #going left
             f(row, col - 1)
+
+            #going up
             f(row -1, col)
+
+            #going down
             f(row + 1, col)
+            
         f(sr, sc)
         return image
