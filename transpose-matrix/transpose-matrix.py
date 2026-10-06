@@ -1,5 +1,5 @@
 // LeetCode Solution: Transpose Matrix
-// Submitted: 2026-10-06T07:50:12.318Z
+// Submitted: 2026-10-06T07:51:51.804Z
 // Language: Python3
 
 class Solution:
@@ -7,10 +7,16 @@ class Solution:
         m = len(matrix) # number of rows
         n = len(matrix[0]) # number of columns
 
-        transpose = []
-        for j in range(n):
-            rows = []
-            for i in range(m):
-                rows.append(matrix[i][j])
-            transpose.append(rows)
-        return transpose 
+        # transpose = []
+        # for j in range(n):
+        #     rows = []
+        #     for i in range(m):
+        #         rows.append(matrix[i][j])
+        #     transpose.append(rows)
+        # return transpose 
+
+        res = [[0]*m for _ in range(n)]
+        for i in range(m):
+            for j in range(n):
+                res[j][i] = matrix[i][j]
+        return res
