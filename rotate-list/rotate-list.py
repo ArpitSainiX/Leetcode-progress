@@ -1,5 +1,5 @@
 // LeetCode Solution: Rotate List
-// Submitted: 2026-10-10T15:52:14.082Z
+// Submitted: 2026-10-10T15:58:04.014Z
 // Language: Python3
 
 # Definition for singly-linked list.
@@ -9,35 +9,28 @@
 #         self.next = next
 class Solution:
     def rotateRight(self, head: ListNode | None, k: int) -> ListNode | None:
-        if not head or not head.next or k == 0:
+        
+        if not head:
+            return None
+        if head.next is None:
             return head
         
+        curr = head
         n = 1
-        tail = head
-        while tail.next:
-            tail = tail.next
+        while curr.next:
+            curr = curr.next
             n += 1
         
-        k = k%n
-        if k == 0:
-            return head
-
-        #make circular
-        tail.next = head
-
-        steps = n-k
-        new_tail = head
-
-        for _ in range(steps-1):
-            new_tail = new_tail.next
-
-        new_head = new_tail.next
-        new_tail.next = None
-
-        return new_head
-
-
+        curr.next = head
+        k = k % n
+        k = n - k - 1
         
+        curr = head
+        for i in range(k):
+            curr = curr.next
+        ret = curr.next
+        curr.next = None
+        return ret
 
 
         
