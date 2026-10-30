@@ -1,5 +1,5 @@
 // LeetCode Solution: Contiguous Array
-// Submitted: 2026-08-19T15:49:51.566Z
+// Submitted: 2026-10-30T09:05:38.420Z
 // Language: Python3
 
 class Solution:
