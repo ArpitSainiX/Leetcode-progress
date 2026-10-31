@@ -1,5 +1,5 @@
 // LeetCode Solution: Subarray Sum Equals K
-// Submitted: 2026-10-31T13:47:25.695Z
+// Submitted: 2026-10-31T13:48:04.669Z
 // Language: Python3
 
 class Solution:
@@ -11,7 +11,7 @@ class Solution:
             curr_sum += el
 
             if (curr_sum - k) in freq:
-                count += 1
+                count += freq[curr_sum-k]
             if curr_sum in freq:
                 freq[curr_sum] += 1
             else:
