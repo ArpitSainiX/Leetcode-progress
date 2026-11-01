@@ -1,5 +1,5 @@
 // LeetCode Solution: Product Of Array Except Self
-// Submitted: 2026-07-24T06:25:58.848Z
+// Submitted: 2026-11-01T06:01:06.945Z
 // Language: Python3
 
 class Solution:
@@ -11,6 +11,7 @@ class Solution:
             res[i] = prefix
             prefix *= nums[i]
         
+
         suffix = 1
         for i in range(len(nums)-1,-1,-1):
             res[i] *= suffix
