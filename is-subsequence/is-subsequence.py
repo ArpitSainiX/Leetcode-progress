@@ -1,10 +1,12 @@
 // LeetCode Solution: Is Subsequence
-// Submitted: 2026-11-04T16:58:33.652Z
+// Submitted: 2026-11-04T16:59:14.180Z
 // Language: Python3
 
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
-        if len(s) == 0 or len(t) == 0:
+        if len(s) == 0:
+            return False
+        if len(t) == 0:
             return False
         p1, p2 = 0,0 
         count = 0
