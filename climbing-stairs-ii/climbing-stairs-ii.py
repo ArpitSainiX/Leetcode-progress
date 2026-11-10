@@ -1,0 +1,22 @@
+// LeetCode Solution: Climbing Stairs Ii
+// Submitted: 2026-11-10T17:30:23.343Z
+// Language: Python3
+
+class Solution:
+    def climbStairs(self, n: int, costs: List[int]) -> int:
+        memo = {}
+
+        def helper(i):
+            if i in memo:
+                return memo[i]
+            if i >= n:
+                return 0
+            min_cost = float('inf')
+            for k in [1,2,3]:
+                if i+k <= n:
+                    jump_penalty = k*k
+                    landing_cost = costs[i+k-1]
+                    min_cost = min(min_cost, landing_cost+jump_penalty + helper(i+k))
+            memo[i] = min_cost
+            return min_cost
+        return helper(0)
