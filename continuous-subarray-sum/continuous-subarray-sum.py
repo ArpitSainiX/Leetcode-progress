@@ -1,5 +1,5 @@
 // LeetCode Solution: Continuous Subarray Sum
-// Submitted: 2026-11-11T16:10:05.234Z
+// Submitted: 2026-11-11T16:11:01.336Z
 // Language: Python3
 
 class Solution:
@@ -12,7 +12,7 @@ class Solution:
             r = count % k
 
             if r not in remainder:
-                remainder[count] = i
+                remainder[r] = i
             elif i - remainder[r] > 1:
                 return True
         return False
