@@ -1,5 +1,5 @@
 // LeetCode Solution: Subarray Sums Divisible By K
-// Submitted: 2026-10-31T13:55:55.643Z
+// Submitted: 2026-11-11T16:22:38.312Z
 // Language: Python3
 
 class Solution:
