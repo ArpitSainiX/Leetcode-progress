@@ -1,5 +1,5 @@
 // LeetCode Solution: Subarray Sum Equals K
-// Submitted: 2026-10-31T13:48:04.669Z
+// Submitted: 2026-11-11T16:22:25.401Z
 // Language: Python3
 
 class Solution:
