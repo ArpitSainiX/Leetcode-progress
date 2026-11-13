@@ -1,5 +1,5 @@
 // LeetCode Solution: Sort Colors
-// Submitted: 2026-11-13T15:25:51.603Z
+// Submitted: 2026-11-13T15:32:06.174Z
 // Language: Python3
 
 class Solution:
@@ -7,9 +7,10 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        nums.sort()
 
-        n = len(nums)
-        for i in range(n):
-            for j in range(n-i-1):
-                if nums[j] > nums[j+1]:
-                    nums[j], nums[j+1] = nums[j+1], nums[j]
+        # n = len(nums)
+        # for i in range(n):
+        #     for j in range(n-i-1):
+        #         if nums[j] > nums[j+1]:
+        #             nums[j], nums[j+1] = nums[j+1], nums[j]
