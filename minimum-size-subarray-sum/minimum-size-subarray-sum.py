@@ -1,5 +1,5 @@
 // LeetCode Solution: Minimum Size Subarray Sum
-// Submitted: 2026-11-20T16:43:49.481Z
+// Submitted: 2026-11-20T16:47:14.801Z
 // Language: Python3
 
 class Solution:
