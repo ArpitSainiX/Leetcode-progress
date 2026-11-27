@@ -1,5 +1,5 @@
 // LeetCode Solution: 3sum
-// Submitted: 2026-11-27T15:11:41.566Z
+// Submitted: 2026-11-27T15:13:46.623Z
 // Language: Python3
 
 class Solution:
@@ -8,7 +8,7 @@ class Solution:
         n = len(nums)
         ans = []
         for i in range(n):
-            if nums[i] > 0: #smallest of the triplet is positive, so the sum must be > 0
+            if nums[-1] < 0: #smallest of the triplet is positive, so the sum must be > 0
                 break
             
             if i > 0 and nums[i] == nums[i-1]: #for removing duplicates and make them unique
