@@ -1,5 +1,5 @@
 // LeetCode Solution: 3sum
-// Submitted: 2026-09-07T07:36:30.497Z
+// Submitted: 2026-11-27T14:49:54.225Z
 // Language: Python3
 
 class Solution:
@@ -22,7 +22,7 @@ class Solution:
                         l += 1
                     while l < r and nums[r] == nums[r+1]:
                         r -= 1
-                elif total < 0:
+                elif total < 0: 
                     l += 1
                 else:
                     r -= 1
